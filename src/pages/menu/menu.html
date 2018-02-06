@@ -1,0 +1,44 @@
+<ion-menu [content]="content" [swipeEnabled]="false">
+  <ion-content>
+    <ion-item-group>
+        <ion-item-divider color="light">Layer</ion-item-divider>
+        <ion-item>
+          <ion-label class="small"><span>Titik Api Satelit <br/>(Terverifikasi)</span></ion-label>
+          <ion-checkbox color="dark" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label class="small"><span>Titik Api Satelit <br/>(Belum Terverifikasi)</span></ion-label>
+          <ion-checkbox color="dark" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label class="small"><span>Laporan Pengguna <br/>(Terverifikasi)</span></ion-label>
+          <ion-checkbox color="dark" checked="true"></ion-checkbox>
+        </ion-item>
+        <ion-item>
+          <ion-label class="small"><span>Laporan Pengguna <br/>(Belum Terverifikasi)</span></ion-label>
+          <ion-checkbox color="dark" checked="true"></ion-checkbox>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider color="light">Peta Dasar</ion-item-divider>
+        <ion-item>
+          <ion-select [(ngModel)]="gaming" interface="popover" style="width:100%; max-width:100%; font-size: small">
+            <ion-option value="nes" selected="true">NES</ion-option>
+            <ion-option value="n64">Nintendo64</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-item-group>
+      <ion-item-group>
+        <ion-item-divider color="light">Radius Deteksi <ion-badge item-end>{{distance}} m</ion-badge></ion-item-divider>
+        <ion-item>
+          <ion-range min="100" max="5000" step="10" [(ngModel)]="distance">
+              <ion-label range-left>100 m</ion-label>
+              <ion-label range-right>5000 m</ion-label>
+          </ion-range>
+        </ion-item>
+      </ion-item-group>
+  </ion-content>
+</ion-menu>
+ 
+<!-- main navigation -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

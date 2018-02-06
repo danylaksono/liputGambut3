@@ -1,0 +1,42 @@
+<ion-content>
+    <ion-list>    
+        <ion-list-header>
+            <h1 ion-text>Laporan Baru</h1>
+        </ion-list-header>
+        <ion-item>
+            <ion-label stacked>Insiden</ion-label>
+            <ion-select [(ngModel)]="laporan.insiden">
+                <ion-option selected="true" value="kebakaran">Kebakaran</ion-option>
+                <ion-option value="penebangan">Penebangan Liar</ion-option>
+                <ion-option value="kanal">Pembangunan Kanal Liar</ion-option>
+                <ion-option value="lain">Insiden Lain</ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Tingkat Kerusakan <ion-badge item-end>{{severityText()}}</ion-badge></ion-label>
+            <ion-range min="1" max="4" step="1" snaps="true" color="secondary" [(ngModel)]="laporan.severity"></ion-range>
+        </ion-item>
+        <ion-item>
+            <ion-label stacked>Keterangan</ion-label>
+            <ion-textarea [(ngModel)]="laporan.keterangan"></ion-textarea>
+        </ion-item>
+        <ion-item>
+            <button ion-button icon-start full (click)="ambilFoto()">
+                <ion-icon name="ios-camera"></ion-icon>
+                Tambah Foto
+            </button>
+            <ion-grid>
+                <ion-row>
+                    <ion-col class="image-container" col-4 *ngFor="let foto of fotoArray">
+                        <img src="{{foto}}"/>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-item>
+    </ion-list>
+    <ion-fab bottom right>
+        <button ion-fab mini (click)="test()">    
+            <ion-icon name="md-checkmark"></ion-icon>
+        </button>
+    </ion-fab>
+</ion-content>

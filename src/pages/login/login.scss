@@ -1,0 +1,22 @@
+page-login {
+    .no-padding {
+        padding: 0!important;
+    }
+
+    .no-margin {
+        margin: 0!important;
+    }
+
+    // ion-input {
+    //     border-bottom: solid 1px map-get($colors, primary);
+    // }
+    .login-icon-container {
+        width: 100%;
+        text-align: center;
+        display: block;
+        img {
+            margin: 0 auto;
+            max-width: 128px;
+        }
+    }
+}

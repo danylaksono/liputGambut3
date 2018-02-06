@@ -1,0 +1,35 @@
+<ion-content>
+  <ion-grid ion-fixed style="width: 100%; height: 100%">
+    <ion-row align-items-center justify-content-center style="width: 100%; height: 100%">
+      <ion-col col-12 style="text-align: center">
+          <div class="login-icon-container">
+            <img src="assets/imgs/users.png" />
+          </div>
+          <h5 ion-text color="primary">Masuk sebagai pengguna</h5>
+          <ion-item>
+            <ion-label color="primary" stacked>Email</ion-label>
+            <ion-input type="email"></ion-input>
+          </ion-item>
+          <ion-item>
+            <ion-label color="primary" stacked>Kata Kunci</ion-label>
+            <ion-input type="password"></ion-input>
+          </ion-item>
+          <ion-row>
+            <ion-col col-9>
+              <button ion-button clear style="float: left" (click)="goToPage('daftar')">
+                <div style="font-size: small; text-align: left"><span style="text-transform: capitalize!important">Belum punya akun?</span><br><span style="color: blue; text-transform: capitalize!important">Daftar</span></div>
+              </button>
+            </ion-col>
+            <ion-col col-3>
+              <button ion-button style="float: right" (click)="goToPage('profil')">
+                <div style="font-size: small">Masuk</div>
+              </button>
+            </ion-col>
+          </ion-row>
+      </ion-col>
+      <ion-fab top right class="fab-no-padding top right">
+        <button ion-fab class="bg-clear" color="danger" (click)="close()"><ion-icon color="danger" name="md-close"></ion-icon></button>
+      </ion-fab>
+    </ion-row>
+  </ion-grid>
+</ion-content>
